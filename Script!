@@ -625,11 +625,6 @@ end)
 
 local FastKilling = false
 window:Toggle("Target All (Void)",{location = Table, flag = "enable"},function()
-		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-			if v.Name == "Kawaii Revolver" then
-			    v:Destroy()
-			end
-		end
 	    
     if FastKilling then
         FastKilling = false
