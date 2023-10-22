@@ -648,7 +648,6 @@ window:Toggle("Target All (Void)",{location = Table, flag = "enable"},function()
                     
                     local targ
                     for i,v in pairs(workspace:GetChildren()) do
-                        if v~=GetChar() and not table.find(_G.IgnoreList,v.Name) then
                             local vhum = v:FindFirstChild("Humanoid")
                             local vroot = v:FindFirstChild("HumanoidRootPart")
                             if vhum and vroot then
@@ -656,8 +655,7 @@ window:Toggle("Target All (Void)",{location = Table, flag = "enable"},function()
                                     targ = vhum
                                     range = dist
                                 end
-                            end
-                        end
+                           end
                     end
 
                     for i=1,2 do
