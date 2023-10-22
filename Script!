@@ -199,7 +199,7 @@ plr:GetMouse().KeyDown:Connect(function(key)
         for _,v in next,plr.Character:GetDescendants() do
             if v:IsA'Tool' and v.Name ~= 'Kawaii Revolver' and not v:FindFirstChild'ClientCD' and v:FindFirstChild'DamageRemote' and v:FindFirstChild'Cooldown' and tar and tar.Character and tar.Character:FindFirstChildOfClass'Humanoid' then
                 AddCd(v,v.Cooldown.Value)
-Workspace.Elek0r:FindFirstChild('Emerald Greatsword').Blade.HitSound:Play()
+Workspace.Elekt0r:FindFirstChild('Emerald Greatsword').Blade.HitSound:Play()
 rs.Stepped:Wait() --LOLLLL Fixed.
                 v.DamageRemote:FireServer(tar.Character:FindFirstChildOfClass'Humanoid')
             elseif v:IsA'Tool' and v.Name == 'Kawaii Revolver' and not v:FindFirstChild'ClientCD' and v:FindFirstChild'ReplicateRemote' and v:FindFirstChild'Barrel' and v.Barrel:FindFirstChild'Attachment' and tar and tar.Character and tar.Character:FindFirstChild'Head' then
