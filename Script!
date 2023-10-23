@@ -695,4 +695,35 @@ window:Button("Quick God",function()
 game:GetService("Players").LocalPlayer.Character.PickupRemote:FireServer()
 wait(.5)
 game.Players.LocalPlayer.Character["Torso"]:Destroy()
+
+    Text = "Ur Character is now in void, press P to unfreecam!";
+    Icon = "http://www.roblox.com/asset/?id=12790890422";
+    Duration = "DURATION IN SECONDS";
+    callback = bindableFunction;
+end)
+
+window:Button("Pencil Tp (CTRL)",function()
+local UIS = game:GetService("UserInputService")
+
+local Player = game.Players.LocalPlayer
+local Mouse = Player:GetMouse()
+
+
+function GetCharacter()
+   return Workspace.Elekt0r.Pencil
+end
+
+function Teleport(pos)
+   local Tool = GetCharacter()
+   if Tool then
+       Tool:MoveTo(pos)
+   end
+end
+
+
+UIS.InputBegan:Connect(function(input)
+   if input.UserInputType == Enum.UserInputType.MouseButton1 and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+       Teleport(Mouse.Hit.p)
+   end
+end)
 end)
