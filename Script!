@@ -608,6 +608,21 @@ end)
 end)
 
 local Pressing = false
+window:Toggle("Anti-Void Tool",{location = Table, flag = "enable"},function()
+    if Pressing then
+        Pressing = false
+    else
+        Pressing = true
+        repeat
+
+game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.One,false,game) wait(.2)
+            game:GetService("RunService").Heartbeat:Wait()
+        until not Pressing
+    end
+
+end)
+
+local Pressing = false
 window:Toggle("Autopress Kill Key (-)",{location = Table, flag = "enable"},function()
     if Pressing then
         Pressing = false
@@ -625,15 +640,20 @@ end)
 
 local FastKilling = false
 window:Toggle("Target All (Void)",{location = Table, flag = "enable"},function()
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v.Name == "Kawaii Revolver" then
+			    v:Destroy()
+			end
+		end
 	    
     if FastKilling then
         FastKilling = false
     else
         FastKilling = true
         repeat
-            
+            wait(.1)
      game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.One,false,game)      
-     wait(-0)
+     wait(.1)
 
             for i,v in pairs(Player.Backpack:GetChildren()) do
                 if v:FindFirstChild("DamageRemote") then
@@ -671,6 +691,8 @@ window:Toggle("Target All (Void)",{location = Table, flag = "enable"},function()
     end
 end)
 
-window:Button("Remove Torso",function()
+window:Button("Quick God",function()
+game:GetService("Players").LocalPlayer.Character.PickupRemote:FireServer()
+wait(.5)
 game.Players.LocalPlayer.Character["Torso"]:Destroy()
 end)
