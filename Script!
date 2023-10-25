@@ -1439,7 +1439,7 @@ local Mouse = Player:GetMouse()
 
 
 function GetCharacter()
-   return Workspace.Elekt0r.Pencil
+   return Workspace.realcmmenter.Pencil
 end
 
 function Teleport(pos)
